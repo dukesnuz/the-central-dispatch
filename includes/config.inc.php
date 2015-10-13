@@ -1,7 +1,31 @@
 <?php
 
-//*********************************Don not delete used for ajax folder***********************
-
+//*********************************Do not delete used for ajax folder***********************
+//config.inc.php
+//is site live
+   if(!defined('LIVE')) DEFINE('LIVE', true);
+//set email for errors to be emailed to
+   //DEFINE('CONTACT_EMAIL','david@ajaxtransport.com');
+    DEFINE('CONTACT_EMAIL','hello@thecentraldispatch.com');
+   //defince more constants
+   define('BASE_URI' , 'includes/pdfs');
+   //below id live
+   //define('BASE_URL', 'www.dukesnuz.com/d/phppercolate_7/index.html');
+   //below for developement
+   //define('BASE_URL', 'http://localhost:81/dukesnuz/phppercolate_7/');
+   define('BASE_URL', 'http://www.thecentraldispatch.com');
+   //define connection to database                   
+   //define('MYSQL', BASE_URL. '/includes/mysql.inc.php');
+      //include('includes/mysql.inc.php');
+     define('MYSQL', './includes/mysql_connect.php');
+	 define('MYSQL_FORUM','./includes/mysql_connect_forum.inc.php');
+   /*http://localhost:81/dukesnuz/phppercolate_7/includes/mysql.inc.php
+   * from download
+   * define ('BASE_URI', '/Users/larryullman/Sites/ex1/');
+define ('BASE_URL', 'localhost/ex1/html/');
+define ('PDFS_DIR', BASE_URI . 'pdfs/'); // Added in Chapter 5.
+define ('MYSQL', BASE_URI . 'mysql.inc.php');
+   */
    session_start();
    
    //define error handling function
