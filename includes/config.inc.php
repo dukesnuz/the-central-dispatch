@@ -5,8 +5,9 @@
 //is site live
    if(!defined('LIVE')) DEFINE('LIVE', true);
 //set email for errors to be emailed to
-   //DEFINE('CONTACT_EMAIL','david@ajaxtransport.com');
+   
     DEFINE('CONTACT_EMAIL','hello@thecentraldispatch.com');
+	DEFINE('CONTACT_EMAIL_2','david@ajaxtransport.com');
    //defince more constants
    define('BASE_URI' , 'includes/pdfs');
    //below id live
@@ -22,9 +23,9 @@
    /*http://localhost:81/dukesnuz/phppercolate_7/includes/mysql.inc.php
    * from download
    * define ('BASE_URI', '/Users/larryullman/Sites/ex1/');
-define ('BASE_URL', 'localhost/ex1/html/');
-define ('PDFS_DIR', BASE_URI . 'pdfs/'); // Added in Chapter 5.
-define ('MYSQL', BASE_URI . 'mysql.inc.php');
+	define ('BASE_URL', 'localhost/ex1/html/');
+	define ('PDFS_DIR', BASE_URI . 'pdfs/'); // Added in Chapter 5.
+	define ('MYSQL', BASE_URI . 'mysql.inc.php');
    */
    session_start();
    
