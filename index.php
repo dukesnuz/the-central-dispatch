@@ -31,6 +31,6 @@ $url=BASE_URL;
 		//echo $email;
 	//	echo $body;			
 	*/	
-	echo 'END';	
+		
 ?>
 
