@@ -10,6 +10,7 @@ require(MYSQL_FORUM);
 
 include('views/index.inc.html');
 
+//checking to see if github working correctly
 /*
 
 $e="david@ajaxtransport.com";
