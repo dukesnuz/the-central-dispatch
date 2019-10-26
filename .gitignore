@@ -1,5 +1,3 @@
 Git-the-central-dispatch_end use_022619/
-.ftpquota
-.project
-error_log
-includes/
+includes/mysql_connect_forum.inc.php
+includes/mysql_connect.php

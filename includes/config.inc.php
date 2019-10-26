@@ -1,32 +1,24 @@
 <?php
 
 //*********************************Do not delete used for ajax folder***********************
-//config.inc.php
-//is site live
-   if(!defined('LIVE')) DEFINE('LIVE', true);
-//set email for errors to be emailed to
-   
+     //are we live
+     //use below for devlopement
+     //if(!defined('LIVE')) DEFINE('LIVE', false);
+	 //use below for live
+	 if(!defined('LIVE')) DEFINE('LIVE', true);
+	 
+	define('SITE_NAME', 'The Central Dispatch');
+	 
     DEFINE('CONTACT_EMAIL','hello@thecentraldispatch.com');
 	DEFINE('CONTACT_EMAIL_2','david@ajaxtransport.com');
-   //defince more constants
-   define('BASE_URI' , 'includes/pdfs');
-   //below id live
-   //define('BASE_URL', 'www.dukesnuz.com/d/phppercolate_7/index.html');
-   //below for developement
-   //define('BASE_URL', 'http://localhost:81/dukesnuz/phppercolate_7/');
-   define('BASE_URL', 'http://www.thecentraldispatch.com');
-   //define connection to database                   
-   //define('MYSQL', BASE_URL. '/includes/mysql.inc.php');
-      //include('includes/mysql.inc.php');
-     define('MYSQL', './includes/mysql_connect.php');
-	 define('MYSQL_FORUM','./includes/mysql_connect_forum.inc.php');
-   /*http://localhost:81/dukesnuz/phppercolate_7/includes/mysql.inc.php
-   * from download
-   * define ('BASE_URI', '/Users/larryullman/Sites/ex1/');
-	define ('BASE_URL', 'localhost/ex1/html/');
-	define ('PDFS_DIR', BASE_URI . 'pdfs/'); // Added in Chapter 5.
-	define ('MYSQL', BASE_URI . 'mysql.inc.php');
-   */
+
+    define('BASE_URI' , 'includes/pdfs');
+    define('BASE_URL', 'http://www.thecentraldispatch.com');
+    //define connection to database                   
+    define('MYSQL', './includes/mysql_connect.php');
+	define('MYSQL_FORUM','./includes/mysql_connect_forum.inc.php');
+	define('MYSQL_FORUM_2','../includes/mysql_connect_forum.inc.php');
+  
    session_start();
    
    //define error handling function

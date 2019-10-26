@@ -1,14 +1,8 @@
 	<?php
 		  //grab info for catagory  $variable		
-<<<<<<< HEAD
 		  //To turn all links off set status to delete/turn on set status to live		
 		  $status = "live";
 	      //$status = "delete";	
-=======
-		//To turn all links off set status to delete/turn on set status to live		
-		$status = "live";
-	    //$status = "delete";	
->>>>>>> 792da50e169df02cfff06c5540fd8bfe858f2e40
 						$q ="SELECT l.title ,l.url, c.catagory
 								FROM
 								links AS l
