@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
 
-		<meta name="description" content="This is a site with links for the freight transportation industry. Drivers, Carriers, Brokers or anyone in the transportation industry." />
-		<meta name="keywords" content="transportation links, drivers, freight transport, brokers, carriers,shippers,trucking" />
-		<meta name="author" content="David Petringa">
-		<meta name="robots" content="index, follow">
-		<meta name="revisit-after" content="3 days">
-		<meta name="generator" content=" ">
-		<meta name="dcterms.created" content="">
-		<meta name="viewport" content="width=device-width; initial-scale=1.0">
-		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+<head>
+	<meta charset="utf-8">
+
+	<meta name="description" content="This is a site with links for the freight transportation industry. Drivers, Carriers, Brokers or anyone in the transportation industry." />
+	<meta name="keywords" content="transportation links, drivers, freight transport, brokers, carriers,shippers,trucking" />
+	<meta name="author" content="David Petringa">
+	<meta name="robots" content="index, follow">
+	<meta name="revisit-after" content="3 days">
+	<meta name="generator" content=" ">
+	<meta name="dcterms.created" content="">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0">
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
 		Remove this if you use the .htaccess
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
 
-		<title>The Central Dispatch</title>
+	<title>The Central Dispatch</title>
 
-		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-		<link rel="shortcut icon" href="/favicon.ico">
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-		<link rel="stylesheet" type="text/css" href="styles/thecentraldispatch_1.css" />
-		<script
-		src="http://code.jquery.com/jquery-3.1.0.min.js"
-		integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
-		crossorigin="anonymous"></script>
-		
-	</head>
+	<link rel="stylesheet" type="text/css" href="styles/thecentraldispatch_1.css" />
+	<script src="http://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 
-	<body>
-		<article>
-			<header class="bannertop">
-				<a href="../index.php"><h1>The Central Dispatch</h1></a>
+</head>
 
-				<div class="boxleft">
+<body>
+	<article>
+		<header class="bannertop">
+			<a href="../index.php">
+				<h1>The Central Dispatch</h1>
+			</a>
 
-					<?php
+			<div class="boxleft">
+
+				<?php
 					///get curerent date
 					$now = new DateTime();
 					echo '
@@ -45,37 +45,37 @@
 					</p>';
 					?>
 
-				</div>
+			</div>
 
-				<div class="boxright" id="bookmark">
-					Bookmark this for your home page.
-				</div>
+			<div class="boxright" id="bookmark">
+				Bookmark this for your home page.
+			</div>
+		</header>
+		<nav>
+
+		</nav>
+		<!-- Content start -->
+
+		<section>
+			<header class="banner">
+				<h3>The Home Page For Transportation Professionals</h3>
+
+				<p>
+					A One Stop Page For Useful Links For Transportation Professionals.
+				</p>
+				<p>
+					Made in USA.
+				</p>
 			</header>
-			<nav>
 
-			</nav>
-			<!-- Content start -->
+			<!--START MIDDLE-->
+			<div class="main">
 
-			<section>
-				<header class="banner">
-					<h3>The Home Page For Transportation Professionals</h3>
-					
-                    <p>
-                    	A One Stop Page For Useful Links For Transportation Professionals.
-                    </p>
-                    <p>
-						Made in USA.
-				  </p>
-				</header>
+				<p>
+					<?php //include('./site_utilities/add_email_form.html');?>
+				</p>
 
-				<!--START MIDDLE-->
-				<div class="main">
-
-					<p>
-						<?php include('./site_utilities/add_email_form.html');?>
-					</p>
-
-					<?php
+				<?php
 					//select catagory variable
 					//to select a diiferent catagory simply change the $c variable below
 					$c = "9";
@@ -94,7 +94,7 @@
 						//get the urls
 						if(mysqli_num_rows($r)>0)
 						{
-						
+
 						while ($row = mysqli_fetch_array($r,MYSQLI_ASSOC))
 						{
 						echo "<p>".$row['title']."</p>";
@@ -102,7 +102,7 @@
 						echo "<p>".$row['url']."</p>";
 
 						}
-						
+
 						}else{
 						 echo "
 						<p class='error'>
@@ -112,37 +112,37 @@
 						echo "
 					</div>";
 					?>
-				</div>
+			</div>
 
-				<!--END Main middle section-->
+			<!--END Main middle section-->
 
-				<!---START Left sidebar-->
-				<aside class="leftsidebar">
+			<!---START Left sidebar-->
+			<aside class="leftsidebar">
 
-					<?php
+				<?php
 					//////////////START/////////NEWS FROM FORUM////////////////
-					$news= "SELECT title, url, date_created FROM news WHERE status='active' ORDER BY date_created DESC";
+				//	$news= "SELECT title, url, date_created FROM news WHERE status='active' ORDER BY date_created DESC";
 
-					$r = @mysqli_query($dbc_forum, $news);
-					echo '<h3 class="banner">News Links</h3>';
-					if(mysqli_num_rows($r)>1)
-					{
-					echo "
+				//	$r = @mysqli_query($dbc_forum, $news);
+				//	echo '<h3 class="banner">News Links</h3>';
+				//	if(mysqli_num_rows($r)>1)
+				//	{
+				//	echo "
 					<ul>
 						";
-						while ($rows = mysqli_fetch_array($r, MYSQLI_ASSOC))
+						//while ($rows = mysqli_fetch_array($r, MYSQLI_ASSOC))
 
-						echo "
+						//echo "
 						<li>
 							<a href='http://$rows[url]' target='blank'>$rows[title]</a>
 						</li>";
-						}else{
-						echo '
+					//	}else{
+					//	echo '
 						<p class="error">
 							No News Stories Today
 						</p>';
 						}
-						echo '
+						//echo '
 					</ul>';
 
 					///////////////END NEWS FROM FORUM///////////
@@ -342,13 +342,13 @@
 					//////////////////////////////////////////////////////////END left side bar//////////////////////////////////////////
 					?>
 
-				</aside>
+			</aside>
 
-				<!--START Right side bar-->
+			<!--START Right side bar-->
 
-				<aside class="rightsidebar">
+			<aside class="rightsidebar">
 
-					<?php
+				<?php
 					//select catagory variable
 					//to select a diiferent catagory simply change the $c variable below
 					$c = "15";
@@ -388,7 +388,7 @@
 						OOpps! No links found
 					</p>";
 					}
-                    
+
                     //////////////////////////////////////////////////////New catagory in right side bar//////////////////////
 
 					//select catagory variable
@@ -429,7 +429,7 @@
 						OOpps! No links found
 					</p>";
 					}
-					
+
 					////////////////////////////////////////////////////////New catagory in right side bar////////////////////////
 					//select catagory variable
 					//to select a diiferent catagory simply change the $c variable below
@@ -553,24 +553,24 @@
 					}
 
 					?>
-				</aside>
+			</aside>
 
-			</section>
+		</section>
 
-			<!--Content end-->
-			<footer>
+		<!--Content end-->
+		<footer>
 
-				<!--suggest a link-->
+			<!--suggest a link-->
 
-				<div class="boxleft">
-					<?php include('./views/social_media_inc.html');?>
+			<div class="boxleft">
+				<?php include('./views/social_media_inc.html');?>
 
-				</div>
+			</div>
 
-				<div class="boxright">
+			<div class="boxright">
 
-					<!--START footer links-->
-					<?php
+				<!--START footer links-->
+				<?php
 					//select catagory variable
 					//to select a diiferent catagory simply change the $c variable below
 					$c = "11";
@@ -617,8 +617,8 @@
 
 					//END footer links
 
-					
-					
+
+
 						echo '
 						<ul>';
 						//get curerent year
@@ -632,57 +632,51 @@
 					</ul>';
 					?>
 
-				</div>
-<p>The Central Dispatch is not responsible for the content of external Internet sites and there is no endorsement implied.</p>
-<!-- google ad words -->
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- thecentraldispatch -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:728px;height:90px"
-     data-ad-client="ca-pub-9788828332937404"
-     data-ad-slot="7372706722"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-			</footer>
-		</article>
-
-<script src="js/js.js" type="text/javascript"></script>
-
-		<!--Start of Tawk.to Script-->
-		<script type="text/javascript">
-			var Tawk_API = Tawk_API || {},
-			    Tawk_LoadStart = new Date();
-			(function() {
-				var s1 = document.createElement("script"),
-				    s0 = document.getElementsByTagName("script")[0];
-				s1.async = true;
-				s1.src = 'https://embed.tawk.to/5589f2da4171a98b67e33708/default';
-				s1.charset = 'UTF-8';
-				s1.setAttribute('crossorigin', '*');
-				s0.parentNode.insertBefore(s1, s0);
-			})();
-		</script>
-		<!--End of Tawk.to Script-->
-
-		<!-- Start of StatCounter Code for Default Guide -->
-		<script type="text/javascript">
-			var sc_project = 1524294;
-			var sc_invisible = 1;
-			var sc_security = "0f232bbc";
-			var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "http://www.");
-			document.write("<sc" + "ript type='text/javascript' src='" + scJsHost + "statcounter.com/counter/counter.js'></" + "script>");
-		</script>
-		<noscript>
-			<div class="statcounter">
-				<a title="web analytics"
-				href="http://statcounter.com/" target="_blank"><img
-				class="statcounter"
-				src="http://c.statcounter.com/1524294/0/0f232bbc/1/"
-				alt="web analytics"></a>
 			</div>
-		</noscript>
-		<!-- End of StatCounter Code for Default Guide -->
-	</body>
+			<p>The Central Dispatch is not responsible for the content of external Internet sites and there is no endorsement implied.</p>
+			<!-- google ad words -->
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- thecentraldispatch -->
+			<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-9788828332937404" data-ad-slot="7372706722"></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+
+		</footer>
+	</article>
+
+	<script src="js/js.js" type="text/javascript"></script>
+
+	<!--Start of Tawk.to Script-->
+	<script type="text/javascript">
+		var Tawk_API = Tawk_API || {},
+			Tawk_LoadStart = new Date();
+		(function() {
+			var s1 = document.createElement("script"),
+				s0 = document.getElementsByTagName("script")[0];
+			s1.async = true;
+			s1.src = 'https://embed.tawk.to/5589f2da4171a98b67e33708/default';
+			s1.charset = 'UTF-8';
+			s1.setAttribute('crossorigin', '*');
+			s0.parentNode.insertBefore(s1, s0);
+		})();
+	</script>
+	<!--End of Tawk.to Script-->
+
+	<!-- Start of StatCounter Code for Default Guide -->
+	<script type="text/javascript">
+		var sc_project = 1524294;
+		var sc_invisible = 1;
+		var sc_security = "0f232bbc";
+		var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "http://www.");
+		document.write("<sc" + "ript type='text/javascript' src='" + scJsHost + "statcounter.com/counter/counter.js'></" + "script>");
+	</script>
+	<noscript>
+		<div class="statcounter">
+			<a title="web analytics" href="http://statcounter.com/" target="_blank"><img class="statcounter" src="http://c.statcounter.com/1524294/0/0f232bbc/1/" alt="web analytics"></a>
+		</div>
+	</noscript>
+	<!-- End of StatCounter Code for Default Guide -->
+</body>
+
 </html>
