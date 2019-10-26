@@ -5,7 +5,7 @@ include('includes/config.inc.php');
 
 
 require(MYSQL);
-//require(MYSQL_FORUM);
+require(MYSQL_FORUM);
 
 include('views/index.inc.html');
 
