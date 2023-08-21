@@ -120,23 +120,43 @@
 			<aside class="leftsidebar">
 
 				<?php
-					//////////////START/////////NEWS FROM FORUM////////////////
-					//$news= "SELECT title, url, date_created FROM news WHERE status='active' ORDER BY date_created DESC";
+				/////////////////////////NEW CATAGORY LEFT SIDE BAR///////////////////////////////
+				//select catagory variable
+				//to select a diiferent catagory simply change the $c variable below
+				$c = "6";
+				include('modules/module_1.inc.php');
+				//get catagory
+				if(mysqli_num_rows($c)===1)
+				{
+				$row = mysqli_fetch_array($c,MYSQLI_ASSOC);
 
-					//$r = @mysqli_query($dbc_forum, $news);
-					echo '<h3 class="banner">News Links</h3>';
-					//if(mysqli_num_rows($r)>1)
-					//{
-				  //echo "<ul>";
-						//while ($rows = mysqli_fetch_array($r, MYSQLI_ASSOC))
-
-						//echo "<li><a href='http://$rows[url]' target='blank'>$rows[title]</a></li>";
-						//}else{
-						echo '<p class="error">No News Stories Today</p>';
-						//}
-						//echo '</ul>';
-
-					///////////////END NEWS FROM FORUM///////////
+				echo '<h3 class="banner">'.$row["catagory"].'</h3>';
+				}else{
+				echo '<h3 class="banner">Catagory</h3>';
+				}
+				//get the urls
+				if(mysqli_num_rows($r)>0)
+				{
+				while ($row = mysqli_fetch_array($r,MYSQLI_ASSOC))
+				{
+				//echo $row['title'];
+				echo '
+				<ul>
+					';
+					echo '
+					<li>
+						<a href="'.$row["url"].' " target="blank"> '.htmlspecialchars($row["title"]).'</a>
+					</li>
+					';
+					echo '
+				</ul>';
+				}
+				}else{
+				echo "
+				<p class='error'>
+					OOpps! No links found
+				</p>";
+				}
 
 					/////////////////////////NEW CATAGORY LEFT SIDE BAR///////////////////////////////
 					//select catagory variable
